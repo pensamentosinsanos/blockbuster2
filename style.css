@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.rowdies-light {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+#tituloblockbuster {
+    font-family: "Rowdies", sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    display: block;
+    float: left;
+    background-color:blue;
+    color: rgb(255, 221, 0);
+}
+header nav ul li{
+    width: 45px;
+    height: 20px;
+    margin: 0px 30px;
+    display: block;
+    float: left;
+    list-style-type: none;
+}
+header nav ul li a{
+    color: rgb(255, 221, 0);
+    font-size: 12px;
+    text-decoration: none;
+}
+header nav ul li:hover{
+    text-decoration: underline;
+}
+ 
