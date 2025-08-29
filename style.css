@@ -89,3 +89,68 @@ main::after {
     main::before { animation: none; transform: none; }
     .glow { animation: none; }
 }
+
+main2{
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+    background: rgb(255, 255, 255);
+}
+#textomain2{
+    color: #ffdd00;
+    padding: 2%;
+    text-shadow: 2px 2px 4px blue;
+}
+#divtextomain2{
+    text-align: center;
+}
+main2 ul li{
+    width: 150px;
+    height: 150px;
+    display: block;
+    float: left;
+    list-style-type: none;
+    margin: 5px;
+    background: rgb(4, 23, 145);
+    box-shadow: 4px 4px 8px 1px #888;
+}
+main2 ul li a{
+    color: white;
+    text-decoration: none;
+}
+main2 ul li a:hover{
+    color: #ffdd00;
+}
+main2 ul li a img{
+    width: 150px;
+}
+main2 ul li a h6{
+    font-size: 16px;
+}
+main2 ul li a span{
+    font-size: 11px;
+}
+
+footer{
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+    background: rgba(7, 37, 233, 0.6);
+    backdrop-filter: blur(6px);
+}
+footer h1{
+    color: #ffdd00;
+    padding: 3%;
+    font-size: medium;
+    
+}
+
+.mainfilme{
+    background-color: #fff;
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+}
