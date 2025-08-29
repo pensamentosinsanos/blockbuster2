@@ -1,40 +1,91 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.rowdies-light {
-    font-family: "Rowdies", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: 'Rowdies', sans-serif; background: #000; color: #fff; }
 
-#tituloblockbuster {
-    font-family: "Rowdies", sans-serif;
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(7, 37, 233, 0.6);
+    backdrop-filter: blur(6px);
+    z-index: 10;
+}
+header h3 { 
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: #ffdd00; }
+header nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+header nav li { cursor: pointer; 
+    transition: color .2s ease; }
+header nav li:hover { color: #ffdd00;
+ }
+
+main {
+    position: relative;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
 }
 
-header{
-    width: 100%;
-    height: 100px;
-    display: block;
-    float: left;
-    background-color:blue;
-    color: rgb(255, 221, 0);
+main::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url('./img/filmes.jfif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.1);
+    filter: brightness(0.55) contrast(1.05) saturate(1.1);
+    z-index: -2;
+    animation: panZoom 20s ease-in-out infinite alternate;
 }
-header nav ul li{
-    width: 45px;
-    height: 20px;
-    margin: 0px 30px;
-    display: block;
-    float: left;
-    list-style-type: none;
+
+main::after {
+    content: "";
+    position: absolute; inset: 0; z-index: -1;
+    background: radial-gradient(120% 120% at 50% 50%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
 }
-header nav ul li a{
-    color: rgb(255, 221, 0);
-    font-size: 12px;
-    text-decoration: none;
+
+@keyframes panZoom {
+    0%   { transform: scale(1.12) translate3d(0, 0, 0); background-position: 50% 50%; }
+    50%  { transform: scale(1.18) translate3d(-1.5%, -1%, 0); background-position: 55% 48%; }
+    100% { transform: scale(1.22) translate3d(-3%, 1.5%, 0);  background-position: 60% 52%; }
 }
-header nav ul li:hover{
-    text-decoration: underline;
+
+.melhorlugaruhul {
+    width: min(1100px, 92%);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-wrap: balance;
+    font-size: clamp(24px, 6vw, 72px);
+    text-shadow: 0 2px 10px rgba(255, 251, 0, 0.55);
 }
- 
+
+.brilo {
+    position: absolute; inset-inline: 0; bottom: -10vh; height: 40vh; pointer-events: none;
+    background: radial-gradient(60% 40% at 50% 100%, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.0) 70%);
+    mix-blend-mode: screen; opacity: .7;
+    animation: floatUp 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(2%); opacity: .55; }
+    to   { transform: translateY(-2%); opacity: .85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main::before { animation: none; transform: none; }
+    .glow { animation: none; }
+}
